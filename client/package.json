@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.14",
+    "@craco/craco": "^7.1.0",
+    "@tailwindcss/forms": "^0.5.7",
     "graphql": "^16.6.0",
     "jwt-decode": "^3.1.2",
     "react": "^18.3.1",
@@ -21,11 +23,13 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^9.8.8",
+    "concurrently": "^5.1.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
-    "vite": "^5.3.1",
-    "concurrently": "^5.1.0"
+    "postcss": "^7.0.39",
+    "vite": "^5.3.1"
   }
 }
