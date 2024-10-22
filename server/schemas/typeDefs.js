@@ -6,42 +6,100 @@ const typeDefs = gql`
     user: User
   }
   
-  type User  {
+  type User {
     _id: ID!
     username: String!
     email: String!
-    cart: [MyCart]
+    myOrders: [MyOrder]
+  }
+
+  type Menu {
+    _id: ID!
+    mainCourse: [MainCourse]!
+    toppings: [Topping]!
+    sauce: [Sauce]!
+    side: [Side]!
+    drink: [Drink]!
   }
 
   type MainCourse {
     _id: ID!
     mcName: String!
-    toppings: String!
-    sauces: String!
-    price: Number!
+    price: Float!
   }
-
-  type Sides {
+  
+  type Topping {
     _id: ID!
-    sName: String!
-    price: Number!
+    tName: String!
+    price: Float!
+  }
+  
+  type Sauce {
+    _id: ID!
+    sauceName: String!
+    type: String
+    price: Float!
   }
 
-  type MyCart {
+  type Side {
+    _id: ID!
+    sideName: String!
+    price: Float!
+  }
+
+  type Drink {
+    _id: ID!
+    dName: String!
+    size: String!
+    flavor: String!
+    price: Float!
+  }
+
+  type MyOrder {
     _id: ID!
     userId: User!
-    mainCourse: [MainCourse]!
-    sides: [Sides]!
-    }
+    mainCourse: [ID]!
+    toppings: [ID]!
+    sauce: [Sauce]
+    side: [Side]!
+    drink: [Drink]!
+  }
+
+  input SauceInput {
+    sauceType: ID
+    quantity: Int
+  }
+
+  input SideInput {
+    sideType: ID
+    quantity: Int
+  }
+
+  input DrinkInput {
+    drinkType: ID
+    quantity: Int
+  }
+
+  input MyOrderInput {
+    mainCourse: [ID]!
+    toppings: [ID]!
+    sauce: [SauceInput]!
+    side: [SideInput]!
+    drink: [DrinkInput]!
+  }
 
   type Query {
     me: User
+    getMenu: [Menu]
+    getOrder(id: ID!): MyOrder
+    getAllOrders: [MyOrder!]!
     
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    createOrder(input: MyOrderInput!): MyOrder!
   }
 
 `;

@@ -22,10 +22,10 @@ const userSchema = new Schema({
     minlenth: 6,
   },
 
-  myCart: [
+  myOrders: [
     {
       type: Schema.Types.ObjectId,
-      ref: "MyCart"
+      ref: "MyOrder"
     }
   ],
   });

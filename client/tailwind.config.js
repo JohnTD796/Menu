@@ -16,8 +16,9 @@ export default {
   theme: {
     colors: {
       white: '#FBFCFF',
-      onyx: '#353B3B',
+      onyx: '#333333',
       eerieBlack: '#1D2020',
+      darkGrey: '#1F1F1F'
     },
     extend: {},
   },

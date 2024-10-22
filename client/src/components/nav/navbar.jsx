@@ -20,13 +20,13 @@
 
 export default function Navbar({ links }) {
   return (
-    <nav className="navbar bg-gray-800 p-4">
+    <nav className="navbar bg-darkGrey p-4">
       <div className="flex justify-center title-container text-white">
         <h2 className="text-2xl font-bold">Johns Food Truck</h2>
       </div>
       <div className="navbarLinks-container">
         <div className="navbar-inner">
-          <ul className="navbar-links justify-center flex flex-row space-x-4">
+          <ul className="navbar-links justify-center flex flex-column space-x-4">
             {links.map((link, index) => (
               <li key={index} className="text-white hover:text-gray-300">
                 {link}

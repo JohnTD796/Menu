@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
-const sidesSchema = new Schema({
-  sName: {
+const sideSchema = new Schema({
+  sideName: {
     type: String,
     required: true,
   },
@@ -13,6 +13,6 @@ const sidesSchema = new Schema({
 
 });
 
-const Sides = model('Sides', sidesSchema);
+const Side = model('Side', sideSchema);
 
-module.exports = Sides
+module.exports = Side
