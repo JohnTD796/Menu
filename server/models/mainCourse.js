@@ -6,16 +6,6 @@ const MainCourseSchema = new Schema({
     required: true,
   },
   
-  toppings: {
-    type: String,
-    required: true,
-  },
-
-  sauces: {
-    type: String,
-    required: true,
-  },
-
   price: {
     type: Number,
     required: true,

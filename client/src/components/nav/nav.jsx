@@ -25,7 +25,7 @@ export default function Nav() {
           id='home' 
           key={1} 
           className= {`block px-4 py-2 ${currentPage === '/' 
-            ? 'font-bold text-xl text-white bg-eerieBlack rounded' 
+            ? 'font-bold text-xl text-white bg-onyx rounded' 
             :'font-bold text-xl text-whiteSmoke hover:text-whiteSmoke/75'}`
           }
           to='/'
@@ -36,7 +36,7 @@ export default function Nav() {
         <Link 
           id='about' key={2} 
           className= {`block px-4 py-2 ${currentPage === '/about' 
-            ? 'font-bold text-xl text-white bg-eerieBlack rounded' 
+            ? 'font-bold text-xl text-white bg-onyx rounded' 
             :'font-bold text-xl text-whiteSmoke hover:text-whiteSmoke/75'}`
           }
           to='/about'
@@ -48,7 +48,7 @@ export default function Nav() {
           id='menu' 
           key={3} 
           className= {`block px-4 py-2 ${currentPage === '/menu' 
-            ? 'font-bold text-xl text-white bg-eerieBlack rounded' 
+            ? 'font-bold text-xl text-white bg-onyx rounded' 
             :'font-bold text-xl text-whiteSmoke hover:text-whiteSmoke/75'}`
           }
           to='/menu'
@@ -60,7 +60,7 @@ export default function Nav() {
           id='profile' 
           key={4}
           className= {`block px-4 py-2 ${currentPage === '/profile' 
-            ? 'font-bold text-xl text-white bg-eerieBlack rounded' 
+            ? 'font-bold text-xl text-white bg-onyx rounded' 
             :'font-bold text-xl text-whiteSmoke hover:text-whiteSmoke/75'}`
           }
           to='/profile'

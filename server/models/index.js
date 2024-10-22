@@ -1,11 +1,19 @@
 const User = require('./user')
-const MyCart = require('./myCart')
+const Menu = require('./menu')
+const MyOrder = require('./myOrder')
 const MainCourse = require('./mainCourse')
-const Sides = require('./sides')
+const Topping = require('./topping')
+const Sauce = require('./sauce')
+const Side = require('./side')
+const Drink = require('./drink')
 
 module.exports = {
   User,
-  MyCart,
+  Menu,
+  MyOrder,
   MainCourse,
-  Sides
+  Topping,
+  Sauce,
+  Side,
+  Drink
 }

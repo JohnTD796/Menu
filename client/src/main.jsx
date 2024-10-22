@@ -6,7 +6,7 @@ import './index.css'
 import Error from './pages/error.jsx'
 import Home from './pages/home.jsx'
 import About from './pages/about.jsx'
-import Menu from './pages/menu.jsx'
+import MenuPage from './pages/menu.jsx'
 import Profile from './pages/profile.jsx'
 
 const router = createBrowserRouter([
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path:  '/menu',
-        element: <Menu />
+        element: <MenuPage />
       },
       {
         path:  '/profile',
