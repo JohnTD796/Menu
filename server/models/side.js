@@ -11,6 +11,11 @@ const sideSchema = new Schema({
     required: true,
   },
 
+  description: {
+    type: String,
+    required: false,
+  },
+
 });
 
 const Side = model('Side', sideSchema);

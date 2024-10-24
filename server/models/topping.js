@@ -9,7 +9,12 @@ const toppingSchema = new Schema({
   price: {
     type: Number,
     default: 0,
-  }
+  },
+
+  description: {
+    type: String,
+    required: false,
+  },
 });
 
 const Topping = model('Topping', toppingSchema);

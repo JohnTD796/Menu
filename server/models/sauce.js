@@ -15,7 +15,12 @@ const sauceSchema = new Schema({
     type: Number,
     required: true,
     default: 0
-  }
+  },
+
+  description: {
+    type: String,
+    required: false,
+  },
 
 });
 

@@ -58,14 +58,14 @@ const Menu = () => {
       case 'Yellow Mustard':
         switch (sauceType) {
           case 'packets':
-            return 'Yellow mustard packets'
+            return 'Yellow mustard packets.'
           case null:
             return 'Yellow mustard on your sandwich.'
         }
       case 'Stadium Mustard':
         switch (sauceType) {
           case 'packets':
-            return 'Stadium mustard packets'
+            return 'Stadium mustard packets.'
           case null:
             return 'Stadium mustard on your sandwich.'
         }
@@ -109,11 +109,7 @@ const Menu = () => {
                       <div className="font-bold text-xl mb-2">{course.mcName}</div>
                       <div className="font-bold text-l mb-2">${course.price}</div>
                       <p className="text-gray-700 text-base">
-                        {course.mcName === 'Burger'
-                          ? 'This is a Burger'
-                          : course.mcName === 'Hot Dog'
-                            ? 'this is a Hot Dog'
-                            : null}
+                        {course.description}
                       </p>
                     </div>
                   </div>
@@ -131,7 +127,7 @@ const Menu = () => {
                         {topping.price === 0 ? null : `$${topping.price}`}
                       </div>
                       <p className="text-gray-700 text-base">
-                        {getToppingDescription(topping.tName)}
+                        {topping.description}
                       </p>
                     </div>
                   </div>
@@ -149,7 +145,7 @@ const Menu = () => {
                         {sauce.price === 0 ? null : `$${sauce.price}`}
                       </div>
                       <p className="text-gray-700 text-base">
-                        {getSauceDescription(sauce.sauceName, sauce.type)}
+                        {sauce.description}
                       </p>
                     </div>
                   </div>
@@ -165,7 +161,7 @@ const Menu = () => {
                       <div className="font-bold text-xl mb-2">{side.sideName}</div>
                       <div className="font-bold text-l mb-2">${side.price}</div>
                       <p className="text-gray-700 text-base">
-                        {getSideDescription(side.sideName)}
+                        {side.description}
                       </p>
                     </div>
                   </div>

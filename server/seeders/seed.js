@@ -20,158 +20,188 @@ let profileSeed = [
 let mcSeed = [
     {
       "mcName": "Burger",
-      "price": 8
+      "price": 8,
+      "description": "This is a Burger"
     },
     {
       "mcName": "Hot Dog",
-      "price": 5
+      "price": 5,
+      "description": "This is a Hot Dog"
     },
 ]
 
 let tSeed = [
   {
     "tName": "Cheddar Cheese",
-    "price": 0
+    "price": 0,
   },
+
   {
     "tName": "American Cheese",
-    "price": 0
+    "price": 0,
   },
+
   {
     "tName": "PepperJack Cheese",
-    "price": 0
+    "price": 0,
   },
+
   {
     "tName": "Swiss Cheese",
-    "price": 0
+    "price": 0,
   },
+
   {
     "tName": "Provolone Cheese",
-    "price": 0
+    "price": 0,
   },
 
   {
     "tName": "Lettuce",
-    "price": 0
+    "price": 0,
+    "description": "Shoestring lettuce is thinly sliced, crisp lettuce that adds a light."
   },
 
   {
     "tName": "Tomato",
-    "price": 0
+    "price": 0,
+    "description": "Thinly sliced tomato adds a fresh, juicy layer of flavor."
   },
 
   {
     "tName": "Red Onion",
-    "price": 0
+    "price": 0,
+    "description": "Thinly sliced red onion offers a crisp, tangy bite, adding vibrant color and flavor."
   },
 
   {
     "tName": "Sweet Onion",
-    "price": 0
+    "price": 0,
+    "description": "Thinly sliced sweet onion provides a mild, deliciously sweet flavor."
   },
   
   {
     "tName": "Sautéed Onion",
-    "price": 0
+    "price": 0,
+    "description": "Cooked to golden-brown perfection, adding a rich, sweet, and savory flavor."
   },
 
   {
     "tName": "Dill Pickles",
-    "price": 0
+    "price": 0,
+    "description": "Dill pickles bring a delightful crunch and tangy flavor."
   },
 
   {
     "tName": "Bacon",
-    "price": 1.5
+    "price": 1.5,
+    "description": "Savory and crispy, our bacon topping delivers a deliciously smoky flavor and satisfying crunch."
   },
 
   {
     "tName": "Relish",
-    "price": 0
+    "price": 0,
+    "description": "Sweet pickle relish adds a burst of flavor with its tangy and sweet notes."
   },
 
   {
     "tName": "Sauerkraut",
-    "price": 0
+    "price": 0,
+    "description": "Finely shredded cabbage that has been fermented, giving it a tangy, slightly sour flavor with a crunchy texture."
   },
 
   {
     "tName": "Jalapeños",
-    "price": 0
+    "price": 0,
+    "description": "These bold, tangy peppers add a delightful zesty kick."
   },
   
 ]
 
 let sauceSeed = [
   {
-    "sauceName": "Ketchup"
+    "sauceName": "Ketchup",
+    "description": "Ketchup on your sandwich."
   },
 
   {
     "sauceName": "Ketchup",
-    "type": "packets"
+    "type": "packets",
+    "description": "Heinz ketchup packets."
   },
 
   {
     "sauceName": "Ketchup",
     "type": "4 oz",
-    "price": .5
-  },
-
-  {
-    "sauceName": "Mayo"
+    "price": .5,
+    "description": "Heinz ketchup in a 4 ounce container"
   },
 
   {
     "sauceName": "Mayo",
-    "type": "packets"
+    "description": "Hellmann's mayo on your sandwich."
   },
 
   {
-    "sauceName": "Yellow Mustard"
+    "sauceName": "Mayo",
+    "type": "packets",
+    "description": "Hellmann's mayo packets."
   },
 
   {
     "sauceName": "Yellow Mustard",
-    "type": "packets"
+    "description": "Yellow mustard on your sandwich."
   },
 
   {
-    "sauceName": "Stadium Mustard"
+    "sauceName": "Yellow Mustard",
+    "type": "packets",
+    "description": "Yellow mustard packets."
   },
 
   {
     "sauceName": "Stadium Mustard",
-    "type": "packets"
+    "description": "Stadium mustard on your sandwich."
+  },
+
+  {
+    "sauceName": "Stadium Mustard",
+    "type": "packets",
+    "description": "Stadium mustard packets."
   },
 
   {
     "sauceName": "Thousand Island",
     "type": "2 oz",
-    "price": ".25"
+    "price": ".25",
+    "description": "Homemade Thousand Island in a 2 ounce container."
   },
 
   {
     "sauceName": "Thousand Island",
     "type": "4 oz",
-    "price": ".5"
+    "price": ".5",
+    "description": "Homemade Thousand Island in a 4 ounce container."
   },
 ]
 
 let sideSeed = [
   {
     "sideName": "French Fries",
-    "price": 2.5
+    "price": 2.5,
+    "description": "Crispy and golden, our freshly cut French fries are made from premium potatoes, hand-cut and fried to perfection. Enjoy them hot and lightly salted."
   },
 
   {
     "sideName": "Chips",
-    "price": 1
+    "price": 1,
+    "description": "Enjoy a variety of 8 oz bags of crispy chips! Be sure to ask our staff what flavors we have available today."
   },
 
   {
     "sideName": "Coleslaw",
-    "price": 1
+    "price": 1,
+    "description": "A refreshing blend of finely shredded cabbage and carrots, tossed in a creamy dressing. Our cole slaw is the perfect balance of crunchy and tangy, making it an ideal side dish for your meal."
   }
 ]
 
@@ -229,7 +259,8 @@ let dSeed = [
     });
 
     console.log('Database connected.');
-
+    
+    await Menu.deleteMany({});
     await MainCourse.deleteMany({});
     await Topping.deleteMany({});
     await Sauce.deleteMany({});
