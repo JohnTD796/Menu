@@ -5,6 +5,7 @@ const User = require('../models/user')
 const Menu = require('../models/menu')
 const MyOrder = require('../models/myOrder')
 const MainCourse = require('../models/mainCourse')
+const Cheese = require('../models/cheese');
 const Topping = require('../models/topping')
 const Sauce = require('../models/sauce')
 const Side = require('../models/side')
@@ -20,7 +21,7 @@ const resolvers = {
     },
     getMenu: async (parent, args, context) => {
       try {
-        const menu = await Menu.find().populate('mainCourse toppings sauce side drink');
+        const menu = await Menu.find().populate('mainCourse cheese toppings sauce side drink');
         console.log(menu)
         return menu
       } catch (error) {
