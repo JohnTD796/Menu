@@ -51,6 +51,11 @@ let tSeed = [
   },
 
   {
+    "tName": "Lettuce",
+    "price": 0
+  },
+
+  {
     "tName": "Tomato",
     "price": 0
   },
@@ -155,7 +160,7 @@ let sauceSeed = [
 
 let sideSeed = [
   {
-    "sideName": "FrenchFries",
+    "sideName": "French Fries",
     "price": 2.5
   },
 
