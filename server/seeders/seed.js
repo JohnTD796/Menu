@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const MainCourse = require('../models/mainCourse');
+const Cheese = require('../models/cheese')
 const Topping = require('../models/topping');
 const Sauce = require('../models/sauce');
 const Side = require('../models/side');
@@ -9,15 +10,15 @@ const { Menu } = require('../models');
 
 const seedDB = async () => {
 
-let profileSeed = [
+  let profileSeed = [
     {
       "username": "John",
       "email": "john@example.com",
       "password": "password123"
     }
-]
-    
-let mcSeed = [
+  ]
+
+  let mcSeed = [
     {
       "mcName": "Burger",
       "price": 8,
@@ -28,229 +29,231 @@ let mcSeed = [
       "price": 5,
       "description": "This is a Hot Dog"
     },
-]
+  ]
 
-let tSeed = [
-  {
-    "tName": "Cheddar Cheese",
-    "price": 0,
-  },
+  let cSeed = [
+    {
+      "cName": "Cheddar Cheese",
+      "description": "",
+    },
 
-  {
-    "tName": "American Cheese",
-    "price": 0,
-  },
+    {
+      "cName": "American Cheese",
+      "description": "",
+    },
 
-  {
-    "tName": "PepperJack Cheese",
-    "price": 0,
-  },
+    {
+      "cName": "PepperJack Cheese",
+      "description": "",
+    },
 
-  {
-    "tName": "Swiss Cheese",
-    "price": 0,
-  },
+    {
+      "cName": "Swiss Cheese",
+      "description": "",
+    },
 
-  {
-    "tName": "Provolone Cheese",
-    "price": 0,
-  },
+    {
+      "cName": "Provolone Cheese",
+      "description": "",
+    },
+  ]
 
-  {
-    "tName": "Lettuce",
-    "price": 0,
-    "description": "Shoestring lettuce is thinly sliced, crisp lettuce that adds a light."
-  },
+  let tSeed = [
+    {
+      "tName": "Lettuce",
+      "price": 0,
+      "description": "Shoestring lettuce is thinly sliced, crisp lettuce that adds a light."
+    },
 
-  {
-    "tName": "Tomato",
-    "price": 0,
-    "description": "Thinly sliced tomato adds a fresh, juicy layer of flavor."
-  },
+    {
+      "tName": "Tomato",
+      "price": 0,
+      "description": "Thinly sliced tomato adds a fresh, juicy layer of flavor."
+    },
 
-  {
-    "tName": "Red Onion",
-    "price": 0,
-    "description": "Thinly sliced red onion offers a crisp, tangy bite, adding vibrant color and flavor."
-  },
+    {
+      "tName": "Red Onion",
+      "price": 0,
+      "description": "Thinly sliced red onion offers a crisp, tangy bite, adding vibrant color and flavor."
+    },
 
-  {
-    "tName": "Sweet Onion",
-    "price": 0,
-    "description": "Thinly sliced sweet onion provides a mild, deliciously sweet flavor."
-  },
-  
-  {
-    "tName": "Sautéed Onion",
-    "price": 0,
-    "description": "Cooked to golden-brown perfection, adding a rich, sweet, and savory flavor."
-  },
+    {
+      "tName": "Sweet Onion",
+      "price": 0,
+      "description": "Thinly sliced sweet onion provides a mild, deliciously sweet flavor."
+    },
 
-  {
-    "tName": "Dill Pickles",
-    "price": 0,
-    "description": "Dill pickles bring a delightful crunch and tangy flavor."
-  },
+    {
+      "tName": "Sautéed Onion",
+      "price": 0,
+      "description": "Cooked to golden-brown perfection, adding a rich, sweet, and savory flavor."
+    },
 
-  {
-    "tName": "Bacon",
-    "price": 1.5,
-    "description": "Savory and crispy, our bacon topping delivers a deliciously smoky flavor and satisfying crunch."
-  },
+    {
+      "tName": "Dill Pickles",
+      "price": 0,
+      "description": "Dill pickles bring a delightful crunch and tangy flavor."
+    },
 
-  {
-    "tName": "Relish",
-    "price": 0,
-    "description": "Sweet pickle relish adds a burst of flavor with its tangy and sweet notes."
-  },
+    {
+      "tName": "Bacon",
+      "price": 1.5,
+      "description": "Savory and crispy, our bacon topping delivers a deliciously smoky flavor and satisfying crunch."
+    },
 
-  {
-    "tName": "Sauerkraut",
-    "price": 0,
-    "description": "Finely shredded cabbage that has been fermented, giving it a tangy, slightly sour flavor with a crunchy texture."
-  },
+    {
+      "tName": "Relish",
+      "price": 0,
+      "description": "Sweet pickle relish adds a burst of flavor with its tangy and sweet notes."
+    },
 
-  {
-    "tName": "Jalapeños",
-    "price": 0,
-    "description": "These bold, tangy peppers add a delightful zesty kick."
-  },
-  
-]
+    {
+      "tName": "Sauerkraut",
+      "price": 0,
+      "description": "Finely shredded cabbage that has been fermented, giving it a tangy, slightly sour flavor with a crunchy texture."
+    },
 
-let sauceSeed = [
-  {
-    "sauceName": "Ketchup",
-    "description": "Ketchup on your sandwich."
-  },
+    {
+      "tName": "Jalapeños",
+      "price": 0,
+      "description": "These bold, tangy peppers add a delightful zesty kick."
+    },
 
-  {
-    "sauceName": "Ketchup",
-    "type": "packets",
-    "description": "Heinz ketchup packets."
-  },
+  ]
 
-  {
-    "sauceName": "Ketchup",
-    "type": "4 oz",
-    "price": .5,
-    "description": "Heinz ketchup in a 4 ounce container"
-  },
+  let sauceSeed = [
+    {
+      "sauceName": "Ketchup",
+      "description": "Ketchup on your sandwich."
+    },
 
-  {
-    "sauceName": "Mayo",
-    "description": "Hellmann's mayo on your sandwich."
-  },
+    {
+      "sauceName": "Ketchup",
+      "type": "packets",
+      "description": "Heinz ketchup packets."
+    },
 
-  {
-    "sauceName": "Mayo",
-    "type": "packets",
-    "description": "Hellmann's mayo packets."
-  },
+    {
+      "sauceName": "Ketchup",
+      "type": "4 oz",
+      "price": .5,
+      "description": "Heinz ketchup in a 4 ounce container"
+    },
 
-  {
-    "sauceName": "Yellow Mustard",
-    "description": "Yellow mustard on your sandwich."
-  },
+    {
+      "sauceName": "Mayo",
+      "description": "Hellmann's mayo on your sandwich."
+    },
 
-  {
-    "sauceName": "Yellow Mustard",
-    "type": "packets",
-    "description": "Yellow mustard packets."
-  },
+    {
+      "sauceName": "Mayo",
+      "type": "packets",
+      "description": "Hellmann's mayo packets."
+    },
 
-  {
-    "sauceName": "Stadium Mustard",
-    "description": "Stadium mustard on your sandwich."
-  },
+    {
+      "sauceName": "Yellow Mustard",
+      "description": "Yellow mustard on your sandwich."
+    },
 
-  {
-    "sauceName": "Stadium Mustard",
-    "type": "packets",
-    "description": "Stadium mustard packets."
-  },
+    {
+      "sauceName": "Yellow Mustard",
+      "type": "packets",
+      "description": "Yellow mustard packets."
+    },
 
-  {
-    "sauceName": "Thousand Island",
-    "type": "2 oz",
-    "price": ".25",
-    "description": "Homemade Thousand Island in a 2 ounce container."
-  },
+    {
+      "sauceName": "Stadium Mustard",
+      "description": "Stadium mustard on your sandwich."
+    },
 
-  {
-    "sauceName": "Thousand Island",
-    "type": "4 oz",
-    "price": ".5",
-    "description": "Homemade Thousand Island in a 4 ounce container."
-  },
-]
+    {
+      "sauceName": "Stadium Mustard",
+      "type": "packets",
+      "description": "Stadium mustard packets."
+    },
 
-let sideSeed = [
-  {
-    "sideName": "French Fries",
-    "price": 2.5,
-    "description": "Crispy and golden, our freshly cut French fries are made from premium potatoes, hand-cut and fried to perfection. Enjoy them hot and lightly salted."
-  },
+    {
+      "sauceName": "Thousand Island",
+      "type": "2 oz",
+      "price": ".25",
+      "description": "Homemade Thousand Island in a 2 ounce container."
+    },
 
-  {
-    "sideName": "Chips",
-    "price": 1,
-    "description": "Enjoy a variety of 8 oz bags of crispy chips! Be sure to ask our staff what flavors we have available today."
-  },
+    {
+      "sauceName": "Thousand Island",
+      "type": "4 oz",
+      "price": ".5",
+      "description": "Homemade Thousand Island in a 4 ounce container."
+    },
+  ]
 
-  {
-    "sideName": "Coleslaw",
-    "price": 1,
-    "description": "A refreshing blend of finely shredded cabbage and carrots, tossed in a creamy dressing. Our cole slaw is the perfect balance of crunchy and tangy, making it an ideal side dish for your meal."
-  }
-]
+  let sideSeed = [
+    {
+      "sideName": "French Fries",
+      "price": 2.5,
+      "description": "Crispy and golden, our freshly cut French fries are made from premium potatoes, hand-cut and fried to perfection. Enjoy them hot and lightly salted."
+    },
 
-let dSeed = [
-  {
-    "dName": "Dr. Pepper",
-    "price": 1
-  },
+    {
+      "sideName": "Chips",
+      "price": 1,
+      "description": "Enjoy a variety of 8 oz bags of crispy chips! Be sure to ask our staff what flavors we have available today."
+    },
 
-  {
-    "dName": "Coke",
-    "price": 1
-  },
+    {
+      "sideName": "Coleslaw",
+      "price": 1,
+      "description": "A refreshing blend of finely shredded cabbage and carrots, tossed in a creamy dressing. Our cole slaw is the perfect balance of crunchy and tangy, making it an ideal side dish for your meal."
+    }
+  ]
 
-  {
-    "dName": "Coke",
-    "flavor": "Diet",
-    "price": 1
-  },
+  let dSeed = [
+    {
+      "dName": "Dr. Pepper",
+      "price": 1
+    },
 
-  {
-    "dName": "Coke",
-    "flavor": "Zero",
-    "price": 1
-  },
+    {
+      "dName": "Coke",
+      "price": 1
+    },
 
-  {
-    "dName": "Coke",
-    "flavor": "Cherry",
-    "price": 1
-  },
+    {
+      "dName": "Coke",
+      "flavor": "Diet",
+      "price": 1
+    },
 
-  {
-    "dName": "Pepsi",
-    "price": 1
-  },
+    {
+      "dName": "Coke",
+      "flavor": "Zero",
+      "price": 1
+    },
 
-  {
-    "dName": "Pepsi",
-    "flavor": "Diet",
-    "price": 1
-  },
+    {
+      "dName": "Coke",
+      "flavor": "Cherry",
+      "price": 1
+    },
 
-  {
-    "dName": "Sprite",
-    "price": 1
-  },
-]
-  
+    {
+      "dName": "Pepsi",
+      "price": 1
+    },
+
+    {
+      "dName": "Pepsi",
+      "flavor": "Diet",
+      "price": 1
+    },
+
+    {
+      "dName": "Sprite",
+      "price": 1
+    },
+  ]
+
 
   try {
     await mongoose.connect('mongodb://127.0.0.1:27017/MenuDB', {
@@ -259,9 +262,10 @@ let dSeed = [
     });
 
     console.log('Database connected.');
-    
+
     await Menu.deleteMany({});
     await MainCourse.deleteMany({});
+    await Cheese.deleteMany({});
     await Topping.deleteMany({});
     await Sauce.deleteMany({});
     await Side.deleteMany({});
@@ -269,6 +273,7 @@ let dSeed = [
     await User.deleteMany({});
 
     const mainCourses = await MainCourse.create(mcSeed);
+    const cheeses = await Cheese.create(cSeed)
     const toppings = await Topping.create(tSeed);
     const sauces = await Sauce.create(sauceSeed);
     const sides = await Side.create(sideSeed);
@@ -277,6 +282,7 @@ let dSeed = [
 
     const menuEntry = {
       mainCourse: mainCourses.map(mc => mc._id),
+      cheese: cheeses.map(c => c._id),
       toppings: toppings.map(t => t._id),
       sauce: sauces.map(s => s._id),
       side: sides.map(s => s._id),

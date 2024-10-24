@@ -16,6 +16,7 @@ const typeDefs = gql`
   type Menu {
     _id: ID!
     mainCourse: [MainCourse]!
+    cheese: [Cheese]!
     toppings: [Topping]!
     sauce: [Sauce]!
     side: [Side]!
@@ -29,6 +30,12 @@ const typeDefs = gql`
     description: String
   }
   
+  type Cheese {
+    _id: ID!
+    cName: String!
+    description: String
+  }
+
   type Topping {
     _id: ID!
     tName: String!
@@ -63,6 +70,7 @@ const typeDefs = gql`
     _id: ID!
     userId: User!
     mainCourse: [ID]!
+    cheese: [ID]!
     toppings: [ID]!
     sauce: [Sauce]
     side: [Side]!
@@ -86,6 +94,7 @@ const typeDefs = gql`
 
   input MyOrderInput {
     mainCourse: [ID]!
+    cheese: [ID]!
     toppings: [ID]!
     sauce: [SauceInput]!
     side: [SideInput]!

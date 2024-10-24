@@ -2,6 +2,7 @@ const User = require('./user')
 const Menu = require('./menu')
 const MyOrder = require('./myOrder')
 const MainCourse = require('./mainCourse')
+const Cheese = require('./cheese')
 const Topping = require('./topping')
 const Sauce = require('./sauce')
 const Side = require('./side')
@@ -12,6 +13,7 @@ module.exports = {
   Menu,
   MyOrder,
   MainCourse,
+  Cheese,
   Topping,
   Sauce,
   Side,

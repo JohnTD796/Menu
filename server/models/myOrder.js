@@ -8,6 +8,13 @@ const myOrderSchema = new Schema({
     },
   ],
 
+  cheese: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Cheese"
+    }
+  ],
+
   toppings: [
     {
       type: Schema.Types.ObjectId,

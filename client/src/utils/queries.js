@@ -9,6 +9,10 @@ query GetMenu {
       price
       description
     }
+    cheese {
+      cName
+      description
+    }
     toppings {
       tName
       price
