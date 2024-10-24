@@ -7,19 +7,23 @@ query GetMenu {
     mainCourse {
       mcName
       price
+      description
     }
     toppings {
       tName
       price
+      description
     }
     sauce {
       sauceName
       type
       price
+      description
     }
     side {
       sideName
       price
+      description
     }
     drink {
       dName

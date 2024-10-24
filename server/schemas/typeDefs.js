@@ -26,12 +26,14 @@ const typeDefs = gql`
     _id: ID!
     mcName: String!
     price: Float!
+    description: String
   }
   
   type Topping {
     _id: ID!
     tName: String!
     price: Float!
+    description: String
   }
   
   type Sauce {
@@ -39,12 +41,14 @@ const typeDefs = gql`
     sauceName: String!
     type: String
     price: Float!
+    description: String
   }
 
   type Side {
     _id: ID!
     sideName: String!
     price: Float!
+    description: String
   }
 
   type Drink {
