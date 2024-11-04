@@ -7,7 +7,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import './index.css'
 import { Outlet } from 'react-router-dom';
-import Nav from './components/nav/nav';
+import Navbar from './components/nav/navbar';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -35,7 +35,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div>
-        <Nav />
+        <Navbar />
         <div className='flex justify-center'>
           <Outlet />
         </div>

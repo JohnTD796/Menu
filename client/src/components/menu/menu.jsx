@@ -215,15 +215,6 @@ const Menu = () => {
                   ))}
                 </div>
               </div>
-              {/* <div>
-                {menuItem.drink.map((drink, index) => (
-                  <div key={index}>{drink.dName}{drink.price}</div>
-                ))}
-              </div> */}
-
-              <div></div>
-              <div></div>
-              <div></div>
             </div>
           ))}
         </div>
