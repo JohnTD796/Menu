@@ -51,11 +51,21 @@ const typeDefs = gql`
     description: String
   }
 
+  type SauceOrder {
+    sauceType: Sauce!
+    Quantity: Int!
+  }
+
   type Side {
     _id: ID!
     sideName: String!
     price: Float!
     description: String
+  }
+
+  type SideOrder {
+    sideType: Side!
+    Quantity: Int!
   }
 
   type Drink {
@@ -65,16 +75,21 @@ const typeDefs = gql`
     flavor: String!
     price: Float!
   }
+  
+  type DrinkOrder {
+    drinkType: Drink!
+    Quantity: Int!
+  }
 
   type MyOrder {
     _id: ID!
     userId: User!
-    mainCourse: [ID]!
-    cheese: [ID]!
-    toppings: [ID]!
-    sauce: [Sauce]
-    side: [Side]!
-    drink: [Drink]!
+    mainCourse: [MainCourse]
+    cheese: [Cheese]
+    toppings: [Topping]
+    sauce: [SauceOrder]
+    side: [SideOrder]
+    drink: [DrinkOrder]
   }
 
   input SauceInput {
@@ -93,12 +108,16 @@ const typeDefs = gql`
   }
 
   input MyOrderInput {
-    mainCourse: [ID]!
-    cheese: [ID]!
-    toppings: [ID]!
-    sauce: [SauceInput]!
-    side: [SideInput]!
-    drink: [DrinkInput]!
+    orderId: ID!
+    mainCourse: [ID]
+    cheese: [ID]
+    toppings: [ID]
+    sauce: [SauceInput]
+    sauceQuantity: Int
+    side: [SideInput]
+    sideQuantity: Int
+    drink: [DrinkInput]
+    drinkQuantity: Int
   }
 
   type Query {
@@ -112,7 +131,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    createOrder(input: MyOrderInput!): MyOrder!
+    addItemToOrder(input: MyOrderInput!): MyOrder
   }
 
 `;

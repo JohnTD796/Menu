@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './navbar';
-import '../../index.css'
+import '../../index.css';
 
 export default function Nav() {
   const [currentPage, setPage] = useState('/')
@@ -18,57 +18,82 @@ export default function Nav() {
     localStorage.setItem('currentPage', page);
   };
 
-  return(
-    <Navbar 
+  return (
+    <Navbar
       links={[
-        <Link 
-          id='home' 
-          key={1} 
-          className= {`block px-4 py-2 ${currentPage === '/' 
-            ? 'font-bold text-xl text-white bg-onyx rounded' 
-            :'font-bold text-xl text-whiteSmoke hover:text-whiteSmoke/75'}`
+        <Link
+          id='home'
+          key={1}
+          className={`block px-4 py-2 ${currentPage === '/'
+            ? 'font-bold text-xl text-white bg-onyx rounded'
+            : 'font-bold text-xl text-whiteSmoke hover:text-whiteSmoke/75'}`
           }
           to='/'
           onClick={() => handlePageChange('/')}
-          >
+        >
           Home
         </Link>,
-        <Link 
-          id='about' key={2} 
-          className= {`block px-4 py-2 ${currentPage === '/about' 
-            ? 'font-bold text-xl text-white bg-onyx rounded' 
-            :'font-bold text-xl text-whiteSmoke hover:text-whiteSmoke/75'}`
+        <Link
+          id='about' key={2}
+          className={`block px-4 py-2 ${currentPage === '/about'
+            ? 'font-bold text-xl text-white bg-onyx rounded'
+            : 'font-bold text-xl text-whiteSmoke hover:text-whiteSmoke/75'}`
           }
           to='/about'
           onClick={() => handlePageChange('/about')}
-          >
+        >
           About
         </Link>,
-        <Link 
-          id='menu' 
-          key={3} 
-          className= {`block px-4 py-2 ${currentPage === '/menu' 
-            ? 'font-bold text-xl text-white bg-onyx rounded' 
-            :'font-bold text-xl text-whiteSmoke hover:text-whiteSmoke/75'}`
+        <Link
+          id='menu'
+          key={3}
+          className={`block px-4 py-2 ${currentPage === '/menu'
+            ? 'font-bold text-xl text-white bg-onyx rounded'
+            : 'font-bold text-xl text-whiteSmoke hover:text-whiteSmoke/75'}`
           }
           to='/menu'
           onClick={() => handlePageChange('/menu')}
-          >
+        >
           Menu
         </Link>,
-        <Link 
-          id='profile' 
+        <Link
+          id='profile'
           key={4}
-          className= {`block px-4 py-2 ${currentPage === '/profile' 
-            ? 'font-bold text-xl text-white bg-onyx rounded' 
-            :'font-bold text-xl text-whiteSmoke hover:text-whiteSmoke/75'}`
+          className={`block px-4 py-2 ${currentPage === '/profile'
+            ? 'font-bold text-xl text-white bg-onyx rounded'
+            : 'font-bold text-xl text-whiteSmoke hover:text-whiteSmoke/75'}`
           }
           to='/profile'
           onClick={() => handlePageChange('/profile')}
-          >
+        >
           Profile
+        </Link>,
+        <Link
+          id='login'
+          key={5}
+          className={`block px-4 py-2 ${currentPage === '/login'
+            ? 'font-bold text-xl text-white bg-onyx rounded'
+            : 'font-bold text-xl text-whiteSmoke hover:text-whiteSmoke/75'}`
+          }
+          to='/login'
+          onClick={() => handlePageChange('/login')}
+        >
+          Login
+        </Link>,
+        <Link
+          id='signUp'
+          key={6}
+          className={`block px-4 py-2 ${currentPage === '/signUp'
+            ? 'font-bold text-xl text-white bg-onyx rounded'
+            : 'font-bold text-xl text-whiteSmoke hover:text-whiteSmoke/75'}`
+          }
+          to='/signUp'
+          onClick={() => handlePageChange('/signUp')}
+        >
+          Sign Up
         </Link>
-      ]}/>
+      ]} />
+
   );
 }
 

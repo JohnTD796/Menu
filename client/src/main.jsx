@@ -8,6 +8,8 @@ import Home from './pages/home.jsx'
 import About from './pages/about.jsx'
 import MenuPage from './pages/menu.jsx'
 import Profile from './pages/profile.jsx'
+import Login from './pages/login.jsx'
+import SignUp from './pages/signUp.jsx'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
       {
         path:  '/profile',
         element: <Profile />
+      },
+      {
+        path:  '/login',
+        element: <Login />
+      },
+      {
+        path:  '/signUp',
+        element: <SignUp />
       },
     ]
   }

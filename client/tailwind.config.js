@@ -18,7 +18,8 @@ export default {
       white: '#FBFCFF',
       onyx: '#333333',
       eerieBlack: '#1D2020',
-      darkGrey: '#1F1F1F'
+      darkGrey: '#1F1F1F',
+      black: '#000000'
     },
     extend: {},
   },
